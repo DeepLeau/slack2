@@ -76,7 +76,7 @@ function NavBar() {
         {/* CTA buttons */}
         <div className="flex items-center gap-2">
           <Link
-            href="#"
+            href="/login"
             className="hidden sm:inline-flex font-semibold transition-colors duration-150"
             style={{
               color: 'var(--color-midnight-indigo)',
