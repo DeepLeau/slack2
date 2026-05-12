@@ -4,8 +4,9 @@ A modern Next.js web application with Supabase authentication and Tailwind CSS s
 
 ## ✨ Features
 
-- Landing page with hero section, features showcase, and footer
-- User signup and authentication powered by Supabase
+- Landing page with hero section
+- User signup and login authentication powered by Supabase
+- User dashboard
 - Responsive design with Tailwind CSS
 - Smooth animations with Framer Motion
 - TypeScript for type safety
@@ -87,8 +88,11 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 - `src/app` — Next.js App Router pages and layouts
 - `src/app/signup` — User signup page
-- `src/components/landing` — Landing page components (Hero, Features, Footer)
-- `src/lib/supabase` — Supabase client and server utilities
+- `src/app/login` — User login page
+- `src/app/dashboard` — User dashboard page
+- `src/components/auth` — Authentication form components (login, signup)
+- `src/lib/supabase` — Supabase client utilities
+- `src/middleware.ts` — Supabase authentication middleware
 
 ## 🚀 Deploy to Vercel
 
@@ -96,16 +100,17 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Step by step:
 
-1. Click the **Deploy with Vercel** button above (or go to [vercel.com/new](https://vercel.com/new))
+1. Click the **Deploy with Vercel** button above
 2. Import your GitHub repository
-3. In the **Environment Variables** section, add all variables from your `.env.local`:
-   - `NEXT_PUBLIC_SUPABASE_URL`
-   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+3. Add all environment variables in Vercel dashboard:
+   - Go to your project → **Settings** → **Environment Variables**
+   - Add `NEXT_PUBLIC_SUPABASE_URL` with your Supabase Project URL
+   - Add `NEXT_PUBLIC_SUPABASE_ANON_KEY` with your Supabase anon key
 4. Click **Deploy**
 
-Your site will be live at a Vercel URL (e.g., `your-app.vercel.app`) once deployment completes.
+Your app will be live at a Vercel-provided URL (e.g., `your-app.vercel.app`).
 
-> ⚠️ **Important**: Make sure to add all environment variables in Vercel before deploying, otherwise your app won't connect to Supabase.
+> 💡 **Important**: Make sure to add all environment variables before deploying. If you forget, go to **Settings → Environment Variables**, add them, and click **Redeploy**.
 
 ## 📝 License
 
