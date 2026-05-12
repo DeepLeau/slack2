@@ -4,9 +4,10 @@ A modern Next.js web application with Supabase authentication and Tailwind CSS s
 
 ## ✨ Features
 
-- Landing page with hero section
-- User signup and login authentication powered by Supabase
-- User dashboard
+- Real-time messaging with thread support
+- Channel creation and management
+- Direct messaging between users
+- Interactive dashboard with sidebar navigation
 - Responsive design with Tailwind CSS
 - Smooth animations with Framer Motion
 - TypeScript for type safety
@@ -16,7 +17,7 @@ A modern Next.js web application with Supabase authentication and Tailwind CSS s
 - **Framework**: Next.js 14+ (App Router)
 - **UI**: React, Tailwind CSS, Framer Motion
 - **Icons**: Lucide React
-- **Authentication**: Supabase
+- **Database/Auth**: Supabase
 - **Language**: TypeScript
 
 ## 🚀 Quick Start
@@ -86,13 +87,13 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 📁 Project Structure
 
-- `src/app` — Next.js App Router pages and layouts
-- `src/app/signup` — User signup page
-- `src/app/login` — User login page
-- `src/app/dashboard` — User dashboard page
-- `src/components/auth` — Authentication form components (login, signup)
-- `src/lib/supabase` — Supabase client utilities
-- `src/middleware.ts` — Supabase authentication middleware
+- `src/app/api/channels` — API route for channel operations
+- `src/app/api/dms` — API route for direct message operations
+- `src/app/api/messages` — API route for message operations
+- `src/app/dashboard` — Main dashboard page
+- `src/components/dashboard` — Dashboard UI components (sidebar, message thread, input, channel modal)
+- `src/lib/types` — TypeScript type definitions
+- `src/lib/utils` — Utility functions
 
 ## 🚀 Deploy to Vercel
 
@@ -100,17 +101,16 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Step by step:
 
-1. Click the **Deploy with Vercel** button above
-2. Import your GitHub repository
-3. Add all environment variables in Vercel dashboard:
-   - Go to your project → **Settings** → **Environment Variables**
-   - Add `NEXT_PUBLIC_SUPABASE_URL` with your Supabase Project URL
-   - Add `NEXT_PUBLIC_SUPABASE_ANON_KEY` with your Supabase anon key
-4. Click **Deploy**
+1. Push your code to GitHub (if not already done)
+2. Go to [vercel.com](https://vercel.com) and sign in with GitHub
+3. Click **Add New Project**
+4. Import your repository
+5. In **Environment Variables**, add each variable from your `.env.local`:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+6. Click **Deploy**
 
-Your app will be live at a Vercel-provided URL (e.g., `your-app.vercel.app`).
-
-> 💡 **Important**: Make sure to add all environment variables before deploying. If you forget, go to **Settings → Environment Variables**, add them, and click **Redeploy**.
+> 💡 **Important**: Make sure all environment variables are added in Vercel before deploying. Your app won't work without them.
 
 ## 📝 License
 
